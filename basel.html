@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Basel & Colmar City Break Itinerary</title>
+<style>
+  /* same styles as before */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e8f0fe;
+    padding: 15px;
+    max-width: 700px;
+    margin: auto;
+    color: #202124;
+  }
+  h1, h2 {
+    text-align: center;
+    color: #1a73e8;
+  }
+  .day {
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.15);
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+  }
+  .activity-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 0 6px rgba(26, 115, 232, 0.3);
+  }
+  a {
+    color: #1a73e8;
+    font-weight: 600;
+    text-decoration: none;
+    flex: 1;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .cost {
+    font-weight: 700;
+    color: #0b8043;
+    min-width: 70px;
+    text-align: right;
+  }
+  .time {
+    font-size: 0.9em;
+    color: #555;
+    min-width: 110px;
+    text-align: left;
+    font-style: italic;
+  }
+  .total-cost {
+    text-align: right;
+    font-size: 1.15em;
+    margin-top: 15px;
+    border-top: 2px solid #1a73e8;
+    padding-top: 10px;
+    font-weight: 700;
+    color: #0b8043;
+  }
+  .footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+  @media (max-width: 480px) {
+    .activity-img {
+      width: 48px;
+      height: 48px;
+    }
+    body {
+      padding: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Basel & Colmar City Break</h1>
+<p style="text-align:center; font-style: italic; margin-bottom: 25px;">Dates: 05.09.2025 - 08.09.2025</p>
+
+<div id="itinerary"></div>
+
+<div class="footer">Powered by Your AI Travel Assistant</div>
+
+<script>
+const itinerary = [
+  {
+    day: "Day 1: Friday – Arrival in Basel",
+    activities: [
+      {
+        time: "14:10 - 15:00",
+        name: "Arrival at Basel Airport",
+        cost: 0,
+        mapsFromPrev: null,
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/EuroAirport_Basel-Mulhouse-Freiburg_Logo.svg/80px-EuroAirport_Basel-Mulhouse-Freiburg_Logo.svg.png"
+      },
+      {
+        time: "15:00 - 15:30",
+        name: "Transfer from Basel Airport to Hotel Silo Design & Boutique Hostel (bus/tram)",
+        cost: 4,
+        mapsFromPrev: "https://www.google.com/maps/dir/Basel+Airport,+Mülhausen,+Switzerland/Silo+Design+%26+Boutique+Hostel,+Basel,+Switzerland",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Basel_tram_Switzerland_2016_IMG_0973.JPG/80px-Basel_tram_Switzerland_2016_IMG_0973.JPG"
+      },
+      {
+        time: "15:30 - 16:30",
+        name: "Check-in at hotel",
+        cost: 0,
+        mapsFromPrev: "",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Basel_-_Rheinufer_2014-05-21_15-05-32.JPG/80px-Basel_-_Rheinufer_2014-05-21_15-05-32.JPG"
+      },
+      {
+        time: "16:30 - 17:30",
+        name: "Evening Walk along the Rhine River",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Silo+Design+%26+Boutique+Hostel,+Basel,+Switzerland/Rhine+River,+Basel,+Switzerland",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Basel_-_Rheinufer_2014-05-21_15-05-32.JPG/80px-Basel_-_Rheinufer_2014-05-21_15-05-32.JPG"
+      },
+      {
+        time: "17:30 - 18:30",
+        name: "Ryhn Cruise (TO RESERVER TICKETS)",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Silo+Design+%26+Boutique+Hostel,+Basel,+Switzerland/Rhine+River,+Basel,+Switzerland",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Basel_-_Rheinufer_2014-05-21_15-05-32.JPG/80px-Basel_-_Rheinufer_2014-05-21_15-05-32.JPG"
+      },
+      {
+        time: "19:00 - 21:00",
+        name: "Dinner at a local restaurant",
+        cost: 40,
+        mapsFromPrev: "https://www.google.com/maps/dir/Rhine+River,+Basel,+Switzerland/Restaurant+near+Basel+Old+Town",
+        img: "https://images.unsplash.com/photo-1543352634-c7c61db2757c?auto=format&fit=crop&w=80&q=80"
+      }
+    ]
+  },
+  {
+    day: "Day 2: Saturday – Exploring Basel",
+    activities: [
+      {
+        time: "08:00 - 09:00",
+        name: "Breakfast at hotel",
+        cost: 0,
+        mapsFromPrev: null,
+        img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=80&q=80"
+      },
+      {
+        time: "09:00 - 10:00",
+        name: "Walk to Basel Minster & explore",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Silo+Design+%26+Boutique+Hostel,+Basel/Basel+Minster",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Basel_Muenster_01.jpg/80px-Basel_Muenster_01.jpg"
+      },
+      {
+        time: "10:00 - 10:30",
+        name: "Walk to Pfalz Terrace",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Basel+Minster/Pfalz+Terrace",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Pfalz_Basel_2013-05-06_001.jpg/80px-Pfalz_Basel_2013-05-06_001.jpg"
+      },
+      {
+        time: "10:30 - 11:00",
+        name: "Visit Tinguely Fountain",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Pfalz+Terrace/Tinguely+Fountain",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Tinguely-Brunnen_Basel.jpg/80px-Tinguely-Brunnen_Basel.jpg"
+      },
+      {
+        time: "11:00 - 11:30",
+        name: "Explore Rathaus (Town Hall)",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Tinguely+Fountain/Rathaus+Basel",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Rathaus_Basel_2011_001.JPG/80px-Rathaus_Basel_2011_001.JPG"
+      },
+      {
+        time: "11:30 - 12:00",
+        name: "Stroll through Marktplatz",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Rathaus+Basel/Marktplatz",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Basel_Marktplatz_2010.jpg/80px-Basel_Marktplatz_2010.jpg"
+      },
+      {
+        time: "12:00 - 13:00",
+        name: "Lunch at Markthalle Basel (food hall)",
+        cost: 25,
+        mapsFromPrev: "https://www.google.com/maps/dir/Marktplatz/Markthalle+Basel",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Markthalle_Basel_001.jpg/80px-Markthalle_Basel_001.jpg"
+      },
+      {
+        time: "13:00 - 15:00",
+        name: "Stroll along the Rhine riverbanks & explore Kleinbasel neighborhood",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Markthalle+Basel/Rhine+River,+Basel",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Basel_Kleinbasel_2013-04-13_005.jpg/80px-Basel_Kleinbasel_2013-04-13_005.jpg"
+      },
+      {
+        time: "15:00 - 17:00",
+        name: "Relax at Kannenfeldpark or Rheingarten",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Kleinbasel/Kannenfeldpark",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Kannenfeldpark_Basel_2012_01.jpg/80px-Kannenfeldpark_Basel_2012_01.jpg"
+      },
+      {
+        time: "18:30 - 20:30",
+        name: "Dinner at a traditional Basel restaurant",
+        cost: 45,
+        mapsFromPrev: "https://www.google.com/maps/dir/Kannenfeldpark/Restaurant+Basel+Old+Town",
+        img: "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=80&q=80"
+      }
+    ]
+  },
+  {
+    day: "Day 3: Sunday – Day Trip to Colmar",
+    activities: [
+      {
+        time: "07:30 - 08:30",
+        name: "Breakfast at hotel",
+        cost: 0,
+        mapsFromPrev: null,
+        img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=80&q=80"
+      },
+      {
+        time: "08:30 - 09:19",
+        name: "Walk to Basel SBB train station",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Silo+Design+%26+Boutique+Hostel,+Basel,+Switzerland/Basel+SBB+Train+Station",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Basel_SBB_Train_Station_2012.jpg/80px-Basel_SBB_Train_Station_2012.jpg"
+      },
+      {
+        time: "09:19 - 10:04",
+        name: "Train Basel to Colmar (approx. 45 min)",
+        cost: 20,
+        mapsFromPrev: "https://www.google.com/maps/dir/Basel+SBB,+Basel,+Switzerland/Colmar,+France",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/TER_train_at_Colmar_station.jpg/80px-TER_train_at_Colmar_station.jpg"
+      },
+      {
+        time: "10:05 - 12:30",
+        name: "Explore Colmar Old Town – Little Venice & half-timbered houses",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Colmar+Train+Station/Little+Venice+Colmar",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Colmar_2017_07.jpg/80px-Colmar_2017_07.jpg"
+      },
+      {
+        time: "12:30 - 13:30",
+        name: "Lunch at Wistub Brenner (traditional Alsace cuisine)",
+        cost: 30,
+        mapsFromPrev: "https://www.google.com/maps/dir/Little+Venice/Wistub+Brenner,+Colmar",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Wistub_Brenner_Colmar_Exterior.jpg/80px-Wistub_Brenner_Colmar_Exterior.jpg"
+      },
+      {
+        time: "13:30 - 16:30",
+        name: "Visit Unterlinden Museum Park & St. Martin’s Church (outside only, no museum)",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Wistub+Brenner/Unterlinden+Museum+Park",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Colmar_St_Martin_Church.jpg/80px-Colmar_St_Martin_Church.jpg"
+      },
+      {
+        time: "16:30 - 18:30",
+        name: "Relax at Parc du Champ de Mars or riverside",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Unterlinden+Museum+Park/Parc+du+Champ+de+Mars",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Parc_du_Champ_de_Mars_Colmar_1.JPG/80px-Parc_du_Champ_de_Mars_Colmar_1.JPG"
+      },
+      {
+        time: "18:30 - 20:30",
+        name: "Dinner at La Maison des Têtes (Alsace specialties)",
+        cost: 45,
+        mapsFromPrev: "https://www.google.com/maps/dir/Parc+du+Champ+de+Mars/La+Maison+des+Têtes,+Colmar",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/La_Maison_des_T%C3%AAtes_Colmar_2014.jpg/80px-La_Maison_des_T%C3%AAtes_Colmar_2014.jpg"
+      },
+      {
+        time: "20:53 - 21:38",
+        name: "Train Colmar to Basel",
+        cost: 20,
+        mapsFromPrev: "https://www.google.com/maps/dir/Colmar,+France/Basel+SBB,+Basel,+Switzerland",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/TER_train_at_Colmar_station.jpg/80px-TER_train_at_Colmar_station.jpg"
+      },
+      {
+        time: "21:40 - 22:00",
+        name: "Walk from Basel SBB to hotel",
+        cost: 0,
+        mapsFromPrev: "https://www.google.com/maps/dir/Basel+SBB+Train+Station/Silo+Design+%26+Boutique+Hostel,+Basel",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Basel_tram_Switzerland_2016_IMG_0973.JPG/80px-Basel_tram_Switzerland_2016_IMG_0973.JPG"
+      }
+    ]
+  },
+  {
+    day: "Day 4: Monday – Departure Day",
+    activities: [
+      {
+        time: "08:00 - 09:00",
+        name: "Breakfast at hotel",
+        cost: 0,
+        mapsFromPrev: null,
+        img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=80&q=80"
+      },
+      {
+        time: "09:00 - 12:00",
+        name: "Relax in Basel – optional visit to local parks or cafes",
+        cost: 10,
+        mapsFromPrev: null,
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Basel_Kleinbasel_2013-04-13_005.jpg/80px-Basel_Kleinbasel_2013-04-13_005.jpg"
+      },
+      {
+        time: "12:00 - 13:30",
+        name: "Lunch near hotel",
+        cost: 25,
+        mapsFromPrev: null,
+        img: "https://images.unsplash.com/photo-1543352634-c7c61db2757c?auto=format&fit=crop&w=80&q=80"
+      },
+      {
+        time: "13:30 - 14:00",
+        name: "Transfer hotel to Basel Airport (bus/tram)",
+        cost: 4,
+        mapsFromPrev: "https://www.google.com/maps/dir/Silo+Design+%26+Boutique+Hostel,+Basel+Switzerland/Basel+Airport",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/EuroAirport_Basel-Mulhouse-Freiburg_Logo.svg/80px-EuroAirport_Basel-Mulhouse-Freiburg_Logo.svg.png"
+      },
+      {
+        time: "15:50",
+        name: "Flight departs Basel to Cluj Napoca",
+        cost: 0,
+        mapsFromPrev: null,
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Aircraft_takeoff.jpg/80px-Aircraft_takeoff.jpg"
+      }
+    ]
+  }
+];
+
+// Function to format cost nicely
+function formatCost(cost) {
+  return `€${cost.toFixed(2)}`;
+}
+
+function createItinerary() {
+  const container = document.getElementById("itinerary");
+  let totalTripCost = 0;
+
+  itinerary.forEach(dayPlan => {
+    let dayCost = 0;
+
+    const dayDiv = document.createElement("div");
+    dayDiv.className = "day";
+
+    const dayTitle = document.createElement("h2");
+    dayTitle.textContent = dayPlan.day;
+    dayDiv.appendChild(dayTitle);
+
+    const ul = document.createElement("ul");
+
+    dayPlan.activities.forEach((activity, idx) => {
+      const li = document.createElement("li");
+
+      const img = document.createElement("img");
+      img.src = activity.img;
+      img.alt = activity.name;
+      img.className = "activity-img";
+      li.appendChild(img);
+
+      const timeSpan = document.createElement("span");
+      timeSpan.className = "time";
+      timeSpan.textContent = activity.time;
+      li.appendChild(timeSpan);
+
+      const a = document.createElement("a");
+      a.textContent = activity.name;
+      if(activity.mapsFromPrev) {
+        a.href = activity.mapsFromPrev;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+      } else {
+        a.style.cursor = "default";
+      }
+      li.appendChild(a);
+
+      const costSpan = document.createElement("span");
+      costSpan.className = "cost";
+      costSpan.textContent = formatCost(activity.cost);
+      li.appendChild(costSpan);
+
+      ul.appendChild(li);
+
+      dayCost += activity.cost;
+    });
+
+    dayDiv.appendChild(ul);
+
+    const dayTotal = document.createElement("div");
+    dayTotal.className = "total-cost";
+    dayTotal.textContent = `Day Total: ${formatCost(dayCost)}`;
+    dayDiv.appendChild(dayTotal);
+
+    container.appendChild(dayDiv);
+
+    totalTripCost += dayCost;
+  });
+
+  // Total trip cost
+  const tripTotalDiv = document.createElement("div");
+  tripTotalDiv.className = "total-cost";
+  tripTotalDiv.style.fontSize = "1.3em";
+  tripTotalDiv.style.textAlign = "center";
+  tripTotalDiv.style.marginTop = "40px";
+  tripTotalDiv.textContent = `Total Trip Cost: ${formatCost(totalTripCost)}`;
+
+  container.appendChild(tripTotalDiv);
+}
+
+createItinerary();
+</script>
+
+</body>
+</html>
+
